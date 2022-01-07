@@ -1,5 +1,3 @@
-"use strict";
-
 // function foo() { return 42; }
 // function bar() { return 10; }
 function add(x,y) { return x + y; }

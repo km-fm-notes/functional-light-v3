@@ -1,5 +1,3 @@
-"use strict";
-
 // Point free
 
 // Ex1: rendering people

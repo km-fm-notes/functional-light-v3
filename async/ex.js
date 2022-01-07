@@ -1,5 +1,3 @@
-"use strict";
-
 const countdownLength = 5;
 
 var timer = rxjs.interval(1000).pipe(

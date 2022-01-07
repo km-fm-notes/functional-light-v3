@@ -1,5 +1,3 @@
-"use strict";
-
 function isPalindrome() {}
 
 console.log( isPalindrome("") === true );
