@@ -1,5 +1,3 @@
-"use strict";
-
 function increment(x) { return x + 1; }
 function decrement(x) { return x - 1; }
 function double(x) { return x * 2; }
