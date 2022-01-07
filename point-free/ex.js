@@ -1,3 +1,4 @@
+const { onCondition, not } = require('../funcs/index.js');
 // Point free
 
 // Ex1: rendering people
@@ -53,11 +54,7 @@ console.log(isEvenV2(4)) // true
 // Best – "Point free" definition using a generalized "not" HOF
 // Now, not can be used elsewhere in code base
 // Also called complement and negate in some libs
-function not(fn) {
-	return function inv(...args) {
-		return !fn(...args);
-	}
-}
+
 const isEvenV3 = not(isOdd);
 console.log(isEvenV3(4)); // true
 
@@ -97,17 +94,6 @@ const isShortEnough = isShortEnoughImperative;
 const isLongEnough = not(isShortEnoughImperative);
 var dmsg1 = "Decla";
 var dmsg2 = dmsg1 + "rative";
-
-function onCondition(conditionalfn) {
-	return function(predicatefn) {
-		return function(...input) {
-			if (predicatefn(...input)) {
-				return conditionalfn(...input);
-			}
-			return void 0;
-		};
-	};
-}
 
 const printIf = onCondition(output);
 

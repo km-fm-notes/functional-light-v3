@@ -1,21 +1,3 @@
-function curry(fn, levels = fn.length, received_args = []) {
-  return function(...inputs) {
-    if (received_args.length + inputs.length >= levels) {
-      return fn(...received_args, ...inputs);
-    }
-    return curry(fn, levels, received_args.concat(inputs));
-  }
-}
-function compose2(fn2, fn1) {
-  return function(v) {
-    return fn2(fn1(v));
-  };
-}
-function compose3(fn3, fn2, fn1) {
-  return function(v) {
-    return fn3(fn2(fn1(v)));
-  };
-}
 function compose(...input_fns) {
   return function _compose(v, queue = []) {
     const queue_size = queue.length;
@@ -28,6 +10,39 @@ function compose(...input_fns) {
     const next_value = next_fn(v);
     return _compose(next_value, queue.concat(next_value));
   };
+}
+function compose2(fn2, fn1) {
+  return function(v) {
+    return fn2(fn1(v));
+  };
+}
+function compose3(fn3, fn2, fn1) {
+  return function(v) {
+    return fn3(fn2(fn1(v)));
+  };
+}
+function curry(fn, levels = fn.length, received_args = []) {
+  return function(...inputs) {
+    if (received_args.length + inputs.length >= levels) {
+      return fn(...received_args, ...inputs);
+    }
+    return curry(fn, levels, received_args.concat(inputs));
+  }
+}
+function not(fn) {
+	return function inv(...args) {
+		return !fn(...args);
+	}
+}
+function onCondition(conditionalfn) {
+	return function(predicatefn) {
+		return function(...input) {
+			if (predicatefn(...input)) {
+				return conditionalfn(...input);
+			}
+			return void 0;
+		};
+	};
 }
 function pipe(...input_fns) {
   return compose(...input_fns.slice().reverse());
@@ -45,8 +60,10 @@ function pipeLegacy(...input_fns) {
   };
 }
 
-module.exports.curry = curry;
+module.exports.compose = compose;
 module.exports.compose2 = compose2;
 module.exports.compose3 = compose3;
-module.exports.compose = compose;
+module.exports.curry = curry;
+module.exports.not = not;
+module.exports.onCondition = onCondition;
 module.exports.pipe = pipe;
