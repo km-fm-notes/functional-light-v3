@@ -1,0 +1,26 @@
+{
+  "name": "functional-light-v3",
+  "version": "0.0.1",
+  "description": "Repo contains code from Kyle Simpson FP Course on Frontend masters <https://frontendmasters.com/courses/functional-javascript-v3/>",
+  "main": "function-arg-spread.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamarmack/functional-light-v3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kamarmack/functional-light-v3/issues"
+  },
+  "homepage": "https://github.com/kamarmack/functional-light-v3#readme",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
