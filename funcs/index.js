@@ -31,6 +31,7 @@ function curry(fn, levels = fn.length, received_args = []) {
     return curry(fn, levels, received_args.concat(inputs));
   }
 }
+function identity(v) { return v; }
 function not(fn) {
 	return function inv(...args) {
 		return !fn(...args);
@@ -61,11 +62,22 @@ function pipeLegacy(...input_fns) {
     return _pipe(next_value, queue.concat(next_value));
   };
 }
+function trampoline(fn) { // crude version of this. use the one from FP libs.
+  return function _trampoline(...args) {
+    let result = fn(...args);
+    while (typeof result === 'function') {
+      result = result();
+    }
+    return result;
+  }
+}
 
 module.exports.compose = compose;
 module.exports.compose2 = compose2;
 module.exports.compose3 = compose3;
 module.exports.curry = curry;
+module.exports.identity = identity;
 module.exports.not = not;
 module.exports.onCondition = onCondition;
 module.exports.pipe = pipe;
+module.exports.trampoline = trampoline;
