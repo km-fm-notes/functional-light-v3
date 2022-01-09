@@ -1,3 +1,5 @@
+'use strict';
+
 function strBuilder(str) {
 	return function next(v){
 		if (typeof v == "string") {

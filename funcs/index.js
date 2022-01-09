@@ -1,3 +1,5 @@
+'use strict';
+
 function compose(...input_fns) {
   return function _compose(v, queue = []) {
     const queue_size = queue.length;

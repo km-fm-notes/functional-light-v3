@@ -1,3 +1,5 @@
+'use strict';
+
 const numbers = [1, 7, 2, 3];
 const max = Math.max.apply(null, numbers);
 console.log(max);

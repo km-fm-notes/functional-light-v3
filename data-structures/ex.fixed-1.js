@@ -1,3 +1,5 @@
+'use strict';
+
 // inception!
 curry = curry(2,curry);
 

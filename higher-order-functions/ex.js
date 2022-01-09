@@ -1,3 +1,5 @@
+'use strict';
+
 // JS is variotic: allows any number of inputs to be passed to functions regardless of signature
 
 // HOFs: input and/or output is a function

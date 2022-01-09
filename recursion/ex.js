@@ -1,4 +1,17 @@
-function isPalindrome() {}
+'use strict';
+
+/**
+ * @param {string} str 
+ */
+function isPalindrome(str) {
+  if (str.length < 2) {
+    return true;
+  }
+  const f = str[0];
+  const last_index = str.length - 1;
+  const l = str[last_index];
+  return (f === l) && isPalindrome(str.slice(1, last_index));
+}
 
 console.log( isPalindrome("") === true );
 console.log( isPalindrome("a") === true );

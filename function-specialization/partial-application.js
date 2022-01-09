@@ -1,3 +1,5 @@
+'use strict';
+
 function partial(fn, ...static_inputs) {
   return function(...inputs) {
     return fn(...static_inputs, ...inputs);

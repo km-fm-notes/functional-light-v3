@@ -1,3 +1,5 @@
+'use strict';
+
 const { compose, curry } = require('../funcs/index.js');
 
 // Composition works best with unary functions because compose can take advantage of an

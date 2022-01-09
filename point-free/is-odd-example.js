@@ -1,3 +1,5 @@
+'use strict';
+
 function isOdd(v) {
 	return v % 2 === 1;
 }

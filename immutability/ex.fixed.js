@@ -1,3 +1,5 @@
+'use strict';
+
 function lotteryNum() {
 	return (Math.round(Math.random() * 100) % 58) + 1;
 }

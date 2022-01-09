@@ -1,3 +1,5 @@
+'use strict';
+
 const { onCondition, not } = require('../funcs/index.js');
 // Point free
 

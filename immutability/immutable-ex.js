@@ -1,3 +1,5 @@
+'use strict';
+
 // When you need a "mutable" data structure, what you actually need is an immutable data structure
 // i.e. a data structure with An API wrapper around internal data that has 
 // pre-defined write mechanisms

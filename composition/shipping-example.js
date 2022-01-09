@@ -1,3 +1,5 @@
+'use strict';
+
 const { compose, pipe, compose3 } = require('../funcs/index.js');
 
 function minus2(x) { return x - 2; }

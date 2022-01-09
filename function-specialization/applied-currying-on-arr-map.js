@@ -1,3 +1,5 @@
+'use strict';
+
 function curry(fn, levels = fn.length, received_args = []) {
   return function(...inputs) {
     if (inputs.length + received_args.length >= levels) {

@@ -1,3 +1,5 @@
+'use strict';
+
 // Shows method #2 of function specialization in functional programming: currying (more common)
 
 function ajax(url) {

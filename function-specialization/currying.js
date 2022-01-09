@@ -1,3 +1,5 @@
+'use strict';
+
 function ajax(url) {
   return function getData(data) {
     return function getCallback(callbackfn) {

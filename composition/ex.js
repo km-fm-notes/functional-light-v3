@@ -1,3 +1,5 @@
+'use strict';
+
 const { compose, pipe } = require('../funcs/index.js');
 
 // Composition: The output of a function f is the input of another function g

@@ -1,3 +1,5 @@
+'use strict';
+
 var students = [
 	{ id: 260, name: "Kyle" },
 	{ id: 729, name: "Susan" },

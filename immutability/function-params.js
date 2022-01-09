@@ -1,3 +1,5 @@
+'use strict';
+
 // Best practice: as writer of a function, assume params are read only
 // Otherwise you create bug vectors 
 // 1) The caller may not include object.freeze

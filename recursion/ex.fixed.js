@@ -1,3 +1,5 @@
+'use strict';
+
 function isPalindrome(str) {
 	if (str.length < 2) return true;
 	var first = str[0];

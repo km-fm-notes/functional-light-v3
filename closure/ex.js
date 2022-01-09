@@ -1,3 +1,5 @@
+'use strict';
+
 function strBuilderFirstTry(str) { // Solves edge case where initial str is undefined
 	if (typeof str === 'string') {
 		return function(arg) {

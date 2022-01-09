@@ -1,3 +1,5 @@
+'use strict';
+
 const { compose, curry } = require('../funcs/index.js');
 
 function triple(x) { return x * 3; }

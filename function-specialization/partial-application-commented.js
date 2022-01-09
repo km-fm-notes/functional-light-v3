@@ -1,3 +1,5 @@
+'use strict';
+
 // Shows method #1 of function specialization in functional programming: partial application (less common)
 
 function partial(fn, ...static_inputs) {
