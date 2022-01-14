@@ -25,32 +25,34 @@ function addn(fns) {
 }
 
 // with recursion:
-// function addn([fn0,fn1,...rest]) {
-// 	if (rest.length == 0) return add2(fn0,fn1);
+function addnR([fn0,fn1,...rest]) {
+	if (rest.length == 0) return add2(fn0,fn1);
 
-// 	return addn(
-// 		[
-// 			function f(){
-// 				return add2(fn0,fn1);
-// 			},
-// 			...rest
-// 		]
-// 	);
-// }
+	return addn(
+		[
+			function f(){
+				return add2(fn0,fn1);
+			},
+			...rest
+		]
+	);
+}
 
 // with iteration:
-// function addn(fns) {
-// 	while (fns.length > 2) {
-// 		let [fn0,fn1,...rest] = fns;
-// 		fns = [
-// 			function f(){
-// 				return add2(fn0,fn1);
-// 			},
-// 			...rest
-// 		];
-// 	}
-// 	return add2(fns[0],fns[1]);
-// }
+function addnI(fns) {
+	while (fns.length > 2) {
+		let [fn0,fn1,...rest] = fns;
+		// decreases array size by 1 each time by pulling fn1 inside the function onion
+		// defers work
+		fns = [
+			function f(){
+				return add2(fn0,fn1);
+			},
+			...rest
+		];
+	}
+	return add2(fns[0],fns[1]);
+}
 
 
 var vals = [7,4,8,0,10,7,3,2,5,9,12,6,4,1,7,8];
