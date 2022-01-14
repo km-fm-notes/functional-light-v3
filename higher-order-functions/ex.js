@@ -33,7 +33,7 @@ function f(...args) {
 
 var g = unary(f); // g: (arg) => array
 var h = binary(f); // h: (arg1, arg2) => array
-var fl = binary(f); // fl: (arg2, arg1) => array
+var fl = flip(f); // fl: (arg2, arg1) => array
 
 console.log(g(1,2,3,4)); // [ 1 ]
 console.log(h(1,2,3,4)); // [ 1, 2, ]
